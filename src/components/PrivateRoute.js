@@ -4,6 +4,7 @@ import useAuthState from '../hooks/useAuthState';
 
 const PrivateRoute = () => {
     const loggedIn = useAuthState();
+    console.log(loggedIn);
 
     return loggedIn ? <Outlet/> : <Navigate to='/signin'/>
 }

@@ -57,7 +57,7 @@ const Profile = () => {
             <button className="btn btn-danger" onClick={logoutHandler}>Logout</button>
         </div>
         <div className=" container mt-4 card" style={{width: '18rem'}}>
-        <div calssName="card-header">
+        <div className="card-header">
           <div className="container mt-4 d-flex justify-content-between">
             <h5>User Personal Details</h5>
           </div>
@@ -76,7 +76,7 @@ const Profile = () => {
             <span style={{cursor:'pointer'}} onClick={() => {
               changeDetails && onSubmit();
               setChangeDetails(prevState => !prevState)}}> 
-              {changeDetails ? <button type="button" class="btn btn-danger">Update profile</button> : <button type="button" class="btn btn-primary">Edit Profile</button> }
+              {changeDetails ? <button type="button" className="btn btn-danger">Update profile</button> : <button type="button" class="btn btn-primary">Edit Profile</button> }
             </span>
           </div>
         </div>

@@ -6,6 +6,7 @@ import {BsFillEyeFill} from 'react-icons/bs'
 import {getAuth, createUserWithEmailAndPassword,updateProfile} from 'firebase/auth'
 import {db} from '../firebase.config'
 import {doc, setDoc, serverTimestamp} from 'firebase/firestore'
+import OAuth from '../components/OAuth';
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -64,7 +65,7 @@ const SignUp = () => {
                 </div>
                 <button type="submit" className="btn btn-primary">Sign up</button>
                 <div>
-                  <h6>Login with Google</h6>
+                  <OAuth/>
                   <span>Already User?</span> <Link to="/signin">Login</Link>
                 </div>
             </form>

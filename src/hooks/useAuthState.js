@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 import {getAuth, onAuthStateChanged} from 'firebase/auth';
 
 const useAuthState = () => {
@@ -14,6 +14,6 @@ const useAuthState = () => {
         })
     })
   return {loggedIn};
-}
+};
 
-export default useAuthState;
+export default useAuthState
