@@ -54,9 +54,12 @@ return (
                   <span>Show Password <BsFillEyeFill className='text-danger' style={{ cursor:"pointer" }} 
                   onClick={() => {setShowPassword((prevState) => !prevState);}}/></span>
                 </div>
-                <button type="submit" className="btn btn-primary">Login</button>
+                <div className="d-flex justify-content-between">
+                  <button type="submit" className="btn btn-primary">Login</button>
+                  <Link to="/forgot-password">Forgot Password?</Link>
+                </div>
                 <div className='mt-2'>
-                  <span>New User</span> <Link to="/signup">Sign Up</Link>
+                  <span>New User?</span> <Link to="/signup">Sign Up</Link>
                 </div>
             </form>
 
