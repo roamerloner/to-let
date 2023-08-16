@@ -1,3 +1,6 @@
+.footer-text span{
+  color: red;
+}
 .img-container {
     position: relative;
     width: 100%;
@@ -27,4 +30,11 @@
   
   .img-container .btn:hover {
     background-color: rgba(0,0,0,0.7);
+  }
+
+  /* house listing container */
+  .listing-link a{
+    text-decoration: none !important;
+    color: black;
+    line-height: normal;
   }

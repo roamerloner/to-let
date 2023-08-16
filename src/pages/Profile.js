@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
-import {useNavigate} from 'react-router-dom';
+import {useNavigate, Link} from 'react-router-dom';
 import { toast } from 'react-toastify';
 import Layout from '../components/Layout/Layout';
 import {getAuth, updateProfile} from 'firebase/auth';
-import {db} from "../firebase.config"
-import {doc, updateDoc} from 'firebase/firestore'
+import {db} from "../firebase.config";
+import {doc, updateDoc} from 'firebase/firestore';
+import {FaArrowAltCircleRight} from 'react-icons/fa';
 
 const Profile = () => {
     const auth = getAuth();
@@ -80,7 +81,9 @@ const Profile = () => {
             </span>
           </div>
         </div>
-
+        <div className='container mt-4 d-flex justify-content-between'>
+          <Link to="/create-post"><FaArrowAltCircleRight/>&nbsp;Create Rent/Sale Post</Link>
+        </div>
     </Layout>
   );
 };

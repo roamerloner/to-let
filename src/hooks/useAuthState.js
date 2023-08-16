@@ -12,7 +12,8 @@ const useAuthState = () => {
                 setLoggedIn(true);
             }
         })
-    })
+    },[loggedIn])
+    
   return {loggedIn};
 };
 
