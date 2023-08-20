@@ -12,9 +12,9 @@ const useAuthState = () => {
                 setLoggedIn(true);
             }
         })
-    },[loggedIn])
+    })
     
-  return {loggedIn};
+  return loggedIn;
 };
 
 export default useAuthState
