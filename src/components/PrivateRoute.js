@@ -3,7 +3,7 @@ import React from 'react';
 import useAuthState from '../hooks/useAuthState';
 
 const PrivateRoute = () => {
-    const loggedIn = useAuthState();
+    const loggedIn = true;
     console.log(loggedIn);
 
     return loggedIn ? <Outlet/> : <Navigate to='/signin'/>
