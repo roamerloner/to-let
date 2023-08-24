@@ -11,6 +11,8 @@ import ForgotPassword from "./pages/ForgotPassword";
 import PrivateRoute from "./components/PrivateRoute";
 import Category from "./pages/Category";
 import CreatePost from "./pages/CreatePost";
+import Postings from "./pages/Postings";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -25,7 +27,9 @@ function App() {
           <Route path="/profile" element={<Profile/>} />
         </Route>
         <Route path="/signup" element={<SignUp/>}/>
+        <Route path="/contact/:landlordId" element={<Contact/>}/>
         <Route path="/forgot-password" element={<ForgotPassword/>}/>
+        <Route path="/category/:categoryName/:postingId" element={<Postings/>}/>
         <Route path="/create-post" element={<CreatePost/>}/>
       </Routes>
     </BrowserRouter>
