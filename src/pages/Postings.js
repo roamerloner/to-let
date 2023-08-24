@@ -5,6 +5,12 @@ import { db } from '../firebase.config';
 import {getAuth} from 'firebase/auth'
 import {useNavigate, Link, useParams} from 'react-router-dom'
 import { Spinner } from "react";
+import SwiperCore,{EffectCoverflow, Navigation, Pagination} from 'swiper'
+import {Swiper, SwiperSlide} from 'swiper/react'
+import 'swiper/css';
+
+//config
+SwiperCore.use([EffectCoverflow, Pagination])
 
 
 
@@ -34,7 +40,36 @@ const Postings = () => {
   return (
     <Layout>
         <div className='container d-flex align-items-center justify-content-center mt-4'>
-          <div className="card" style={{width: 600}}>
+          <div className="card" style={{width: "600px"}}>
+            <div className='card-header'>
+              {postings.imgUrls === undefined ? (<Spinner />) :(
+                <Swiper
+                  effect={"coverflow"}
+                  grabCursor={true}
+                  centeredSlides={true}
+                  slidesPerView={1}
+                  coverflowEffect={{ 
+                    rotate:50,
+                    stretch:0,
+                    depth:100,
+                    modifier:1,
+                    slideShadows:true,
+                   }}
+                   pagination={true}
+                   className="mySwipe">
+                  {postings.imgUrls.map((url,index) => (
+                    <SwiperSlide key={index}>
+                      <img 
+                      src={postings.imgUrls[index]} 
+                      height={400}
+                      width={800}
+                      alt={postings.name}></img>
+                    </SwiperSlide>
+                  ))}
+
+                </Swiper>
+              )}
+            </div>
             <div className="card-body">
                 <h3>{postings.name}</h3>
                 <h6>Price : TK {" "}{postings.offer ? postings.discountedPrice : postings.regularPrice}</h6>

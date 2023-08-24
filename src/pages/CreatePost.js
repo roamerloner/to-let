@@ -137,7 +137,9 @@ const CreatePost = () => {
 
     //save form data
     const formDataCopy = {...formData, imgUrls, timestamp:serverTimestamp()}
+    // formData.location = address;
     delete formDataCopy.images;
+    !formDataCopy.offer && delete formDataCopy.discountedPrice;
     const docRef = await addDoc(collection(db,'listings'),formDataCopy);
     toast.success("Upload successful");
     navigate(`/category/${formDataCopy.type}/${docRef.id}`);
