@@ -8,6 +8,8 @@ import ListingItem from '../components/ListingItem';
 export const Offers = () => {
   
   const [listing, setListing] = useState(null);
+   const [loading, setLoading] = useState(true);
+  const [lastFetchListing, setLastFetchListing] = useState(null);
 
   //fetch listing
   useEffect(() => {
@@ -24,6 +26,8 @@ export const Offers = () => {
               );
             //execute query
             const querySnap = await getDocs(q);
+            const lastVisible = querySnap.docs[querySnap.docs.length - 1];
+            setLastFetchListing(lastVisible);
             const listings = [];
             querySnap.docs.forEach((doc) => {
               return listings.push({
@@ -32,6 +36,7 @@ export const Offers = () => {
               })
             });
             setListing(listings);
+            setLoading(false);
           } catch (error) {
             console.log(error);
             toast.error("Unble to fetch data");
@@ -40,6 +45,40 @@ export const Offers = () => {
         //function call
         fetchListing();
       }, []);
+
+
+
+      //loadmore pagination func
+      const fetchLoadMoreListing = async () => {
+    try {
+      //refrence
+      const listingsRef = collection(db, "listings");
+      //query
+      const q = query(
+        listingsRef,
+        where("offer", "==", true),
+        orderBy("timestamp", "desc"),
+        startAfter(lastFetchListing),
+        limit(10)
+      );
+      //execute query
+      const querySnap = await getDocs(q);
+      const lastVisible = querySnap.docs[querySnap.docs.length - 1];
+      setLastFetchListing(lastVisible);
+      const listings = [];
+      querySnap.forEach((doc) => {
+        return listings.push({
+          id: doc.id,
+          data: doc.data(),
+        });
+      });
+      setListing((prevState) => [...prevState, ...listings]);
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+      toast.error("Unble to fetch data");
+    }
+  };
   return (
     <Layout>
         <div className='mt-3 container-fluid'>
@@ -56,6 +95,17 @@ export const Offers = () => {
           </>
           ) : (<p>No offers available at the moment!</p>)
         }
+
+        <div className="d-flex align-items-center justify-content-center mb-4 mt-4">
+        {lastFetchListing && (
+          <button
+            className="btn btn-primary text-center"
+            onClick={fetchLoadMoreListing}
+          >
+            load more
+          </button>
+        )}
+      </div>
     </Layout>
   )
 }

@@ -5,11 +5,11 @@ import { db } from "../firebase.config";
 import { getAuth } from "firebase/auth";
 import { useNavigate, Link, useParams } from "react-router-dom";
 import Spinner from "../components/Spinner";
-import SwipeCore, { EffectCoverflow, Navigation, Pagination } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/swiper-bundle.min.css";
-import "swiper/swiper.min.css";
-import "../styles/postings.css";
+import SwipeCore,{EffectCoverflow, Navigation, Pagination} from 'swiper'
+import {Swiper, SwiperSlide} from 'swiper/react'
+
+import 'swiper/css/bundle';
+
 import {
   FaBed,
   FaBath,

@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {GiBed, GiBathtub} from "react-icons/gi";
 
-const listings = ({listing, id}) => {
+const ListingItem = ({listing, id, onDelete}) => {
   return (
     <div className='d-flex align-item-center justify-content-center'>
-        <div className='card listing-link' style={{width: "800px"}}>
+        <div className='card listing-link mb-2' style={{width: "800px"}}>
           <Link to={`/category/${listing.type}/${id}`}>
             <div className='row container p-2'>
                 <div className='col-md-5'>
@@ -23,6 +23,14 @@ const listings = ({listing, id}) => {
                   <p>
                     <GiBathtub/>&nbsp;{listing.bathrooms > 1 ? `${listing.bathrooms} Bathrooms` : "1 Bathroom"}
                   </p>
+                  {onDelete && (
+              <button
+                className="btn btn-danger"
+                onClick={() => onDelete(listing.id, listing.name)}
+              >
+                Delete Listing
+              </button>
+            )}
                 </div>
             </div>
           </Link>
@@ -31,4 +39,4 @@ const listings = ({listing, id}) => {
   )
 }
 
-export default listings
+export default ListingItem
