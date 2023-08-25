@@ -2,6 +2,7 @@ import React, {useState, useEffect, useRef} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import Layout from '../components/Layout/Layout';
+import Spinner from "../components/Spinner";
 import {getAuth, onAuthStateChanged} from 'firebase/auth';
 import {getStorage, ref, uploadBytesResumable, getDownloadURL} from 'firebase/storage';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
