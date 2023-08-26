@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {GiBed, GiBathtub} from "react-icons/gi";
 
-const ListingItem = ({listing, id, onDelete}) => {
+const ListingItem = ({listing, id, onDelete, onEdit}) => {
   return (
     <div className='d-flex align-item-center justify-content-center'>
         <div className='card listing-link mb-2' style={{width: "800px"}}>
@@ -29,6 +29,14 @@ const ListingItem = ({listing, id, onDelete}) => {
                 onClick={() => onDelete(listing.id, listing.name)}
               >
                 Delete Listing
+              </button>
+            )}
+             {onEdit && (
+              <button
+                className="btn btn-info ms-3"
+                onClick={() => onEdit(listing.id)}
+              >
+                Edit Listing
               </button>
             )}
                 </div>

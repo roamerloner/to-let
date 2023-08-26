@@ -1,6 +1,7 @@
 import {Navigate, Outlet} from 'react-router-dom';
 import React from 'react';
-import useAuthState from '../hooks/useAuthState';
+import useAuthState from './../hooks/useAuthState';
+
 
 const PrivateRoute = () => {
     const loggedIn = true;

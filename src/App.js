@@ -13,6 +13,7 @@ import Category from "./pages/Category";
 import CreatePost from "./pages/CreatePost";
 import Postings from "./pages/Postings";
 import Contact from "./pages/Contact";
+import EditListing from "./pages/EditListing";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/" element={<HomePage/>} />
         <Route path="/offers" element={<Offers/>} />
         <Route path="/category/:categoryName" element={<Category/>} />
+        <Route path="/editlisting/:listingId" element={<EditListing/>} />
         <Route path="/signin" element={<SignIn/>} />
         <Route path="/profile" element={<PrivateRoute/>}>
           <Route path="/profile" element={<Profile/>} />
