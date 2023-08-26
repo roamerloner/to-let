@@ -7,6 +7,7 @@ import {getAuth, createUserWithEmailAndPassword,updateProfile} from 'firebase/au
 import {db} from '../firebase.config'
 import {doc, setDoc, serverTimestamp} from 'firebase/firestore'
 import OAuth from '../components/OAuth';
+import "../styles/signup.css";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);

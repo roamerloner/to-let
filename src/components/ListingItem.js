@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {GiBed, GiBathtub} from "react-icons/gi";
+import "../styles/listingitem.css";
 
 const ListingItem = ({listing, id, onDelete, onEdit}) => {
   return (

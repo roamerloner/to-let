@@ -7,6 +7,7 @@ import {db} from "../firebase.config";
 import {doc, updateDoc, collection, getDocs, query, where, orderBy, deleteDoc} from 'firebase/firestore';
 import {FaArrowAltCircleRight} from 'react-icons/fa';
 import ListingItem from '../components/ListingItem';
+import "../styles/profile.css";
 
 
 const Profile = () => {

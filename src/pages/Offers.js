@@ -4,6 +4,7 @@ import { db } from '../firebase.config';
 import { toast } from 'react-toastify';
 import { collection, getDocs, query, where, orderBy, limit, startAfter } from 'firebase/firestore';
 import ListingItem from '../components/ListingItem';
+import "../styles/offers.css";
 
 export const Offers = () => {
   

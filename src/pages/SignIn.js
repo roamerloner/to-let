@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import Layout from '../components/Layout/Layout'
 import {BsFillEyeFill} from 'react-icons/bs'
 import OAuth from '../components/OAuth';
+import "../styles/signin.css";
 
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
