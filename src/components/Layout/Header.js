@@ -1,7 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { BsBuilding } from "react-icons/bs";
-import { FaBars } from "react-icons/fa";
 import "../../styles/Header.css";
 
 const Header = () => {
@@ -14,7 +12,7 @@ const Header = () => {
     </button>
     <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
       <Link className="navbar-brand" to="/">
-        <BsBuilding size={30} className="me-2" /> To-Let
+         To-Let
         </Link>
       <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
         <li className="nav-item">
@@ -27,6 +25,15 @@ const Header = () => {
           <Link className="nav-link " to="/profile">Profile</Link>
         </li>
       </ul>
+      <div className="dropdown">
+        <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          SignIn/SignUp
+        </button>
+        <ul className="dropdown-menu">
+          <li><Link className="dropdown-item" to="/signin" >SignIn</Link></li>
+          <li><Link className="dropdown-item" to="/signup" >SignUp</Link></li>
+        </ul>
+      </div>
     </div>
   </div>
 </nav>

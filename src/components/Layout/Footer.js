@@ -6,17 +6,6 @@ import "../../styles/footer.css";
 const Footer = () => {
   return (
     <div className="footer pt-4 d-flex flex-column align-items-center justify-content-center bg-dark text-light p-4">
-      <h3>
-        Made With
-        <img
-          src="./assets/love.gif"
-          alt="love"
-          height={30}
-          width={80}
-          className="mx-3 footer-gif"
-        />
-        From Bangladesh
-      </h3>
       <h6>All Right Reserved &copy; codeRED - 2023</h6>
       <div className="d-flex flex-row p-2">
         <p className="me-4" title="Github">
