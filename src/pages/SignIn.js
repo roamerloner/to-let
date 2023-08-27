@@ -31,7 +31,7 @@ const loginHandler = async (e) => {
     const auth = getAuth();
     const userCredential= await signInWithEmailAndPassword(auth, email, password);
     if(userCredential.user){
-     toast.success("Successful");
+     toast.success("Login Successful");
       navigate("/");
     }
   } catch (error) {
